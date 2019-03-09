@@ -11,6 +11,7 @@
 
 # Mysql data-stored
 /data/*
+!/data/**/
 
 # Server System log-files
 /logs/*
