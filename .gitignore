@@ -2,6 +2,7 @@
 /.env
 /.vscode
 /config/*
+!/config/**/
 /data/*
 /logs/*
 .DS_Store
