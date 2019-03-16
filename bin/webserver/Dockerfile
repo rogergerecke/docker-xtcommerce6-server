@@ -25,24 +25,33 @@ RUN apt-get -y install libmcrypt-dev
 RUN pecl install mcrypt-1.0.2
 RUN docker-php-ext-enable mcrypt
 
-RUN apt-get -y install libsqlite3-dev libsqlite3-0 mysql-client
-RUN docker-php-ext-install pdo_mysql
-RUN docker-php-ext-install pdo_sqlite
-RUN docker-php-ext-install mysqli
+# Install YAML extension
+RUN pecl install yaml-2.0.2 && echo "extension=yaml.so" > /usr/local/etc/php/conf.d/ext-yaml.ini
 
-RUN docker-php-ext-install curl
-RUN docker-php-ext-install tokenizer
-RUN docker-php-ext-install json
-
-RUN apt-get -y install zlib1g-dev \
+RUN apt-get -y install \
+    libsqlite3-dev \
+    libsqlite3-0 \
+    mysql-client \
+    libxml2-dev \
+    zlib1g-dev \
     zlib1g-dev \
     libzip-dev
 
-RUN docker-php-ext-install zip
+RUN docker-php-ext-install \
+    pdo_mysql \
+    pdo_sqlite \
+    mysqli \
+    curl \
+    tokenizer \
+    json \
+    soap \
+    zip \
 
+# unicode unterstützung
 RUN apt-get -y install libicu-dev
 RUN docker-php-ext-install -j$(nproc) intl
 
+# multibyte encodings in PHP.
 RUN docker-php-ext-install mbstring
 
 RUN apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev

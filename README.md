@@ -33,7 +33,12 @@ Der LAMP Server ist startklar!! Du kannst im Browser erreichen unter `http://loc
 
 ```
 /bin
-## enthält nur die Dockerfiles zur Installation des Docker-Containers
+## enthält nur die Dockerfiles zur Installation des Docker-Containers diese barauchen wir nicht anrühren.
+
+/config
+## enthält die config Datein für PHP,MYSQL,VHOST wenn man will kann man dort z.b. andere einstellung in der php.ini vornehmen.
+
+
 
 ```
 ## Installation mit PHPStorm das beste zusammenspiel
