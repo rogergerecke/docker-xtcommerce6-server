@@ -46,8 +46,8 @@ Klone dieses Repository auf deinen Lokalen Computer mit dem Terminal und nutze d
 Im Terminal ausführen
 
 ```sh
-$ git clone https://github.com/rogergerecke/xtcommerce6-docker-container.git
-$ cd docker-compose-lamp/
+$ https://github.com/rogergerecke/docker-xtcommerce6-server.git
+$ cd docker-xtcommerce6-server/
 $ git fetch --all
 $ git checkout 7.1.x
 $ docker-compose up -d
