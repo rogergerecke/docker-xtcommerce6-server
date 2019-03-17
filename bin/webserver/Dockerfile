@@ -19,15 +19,12 @@ RUN pecl install xdebug-2.7.0
 RUN docker-php-ext-enable xdebug
 
 # Other PHP7 Extensions
-
 RUN apt-get -y install libmcrypt-dev
 
 RUN pecl install mcrypt-1.0.2
 RUN docker-php-ext-enable mcrypt
 
-# Install YAML extension
-RUN pecl install yaml-2.0.2 && echo "extension=yaml.so" > /usr/local/etc/php/conf.d/ext-yaml.ini
-
+# Download packages
 RUN apt-get -y install \
     libsqlite3-dev \
     libsqlite3-0 \
@@ -35,7 +32,8 @@ RUN apt-get -y install \
     libxml2-dev \
     zlib1g-dev \
     zlib1g-dev \
-    libzip-dev
+    libzip-dev \
+    libyaml-dev \
 
 RUN docker-php-ext-install \
     pdo_mysql \
@@ -46,6 +44,9 @@ RUN docker-php-ext-install \
     json \
     soap \
     zip \
+
+# Install YAML extension
+RUN pecl install yaml-2.0.4 && echo "extension=yaml.so" > /usr/local/etc/php/conf.d/ext-yaml.ini
 
 # unicode unterstützung
 RUN apt-get -y install libicu-dev
