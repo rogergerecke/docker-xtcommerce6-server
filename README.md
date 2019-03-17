@@ -1,11 +1,10 @@
-# xt:Commerce Entwiklung im Docker Container
+# Docker-Container für die xt:Commerce Entwicklung
 
-Wer schnell in die Entwiklung von xt:Commerce 6 einsteigen will kann das am besten in einem Docker Container tun.
-Die ist keine von xt:Commerce Supportete Version!
+>Wer schnell in die Entwiklung von xt:Commerce 6 Free einsteigen will kann dies in einem Docker-Container tun.  Die ist keine von xt:Commerce Supportete Version!
 
-## Container mit LAMP umgebung
+## Im Docker-Container enthalten
 
-* Basis Linux Debian und NGNIX als Proxy
+* Basis Linux Debian
 * Apache
 * PHP 7.3
 * cURL
@@ -15,49 +14,50 @@ Die ist keine von xt:Commerce Supportete Version!
 * SimpleXML
 * MySQL 5.7
 * phpMyAdmin
+* NGINX als Proxy
 * xt:Commerce Install shell Skript
 
 ### Benötigten Grundeinstellung für xt:Commerce 6 Free
 
-```
-PHP Konfiguration der Module in der php.ini
-* session_autostart = Off
-* file_uploads = on
-* xdebug.remote_enable = 1
-* allow_url_include = 1
-* memory_limit = 1024M
-* post_max_size = 100M
-* upload_max_filesize = 20M
-* max_execution_time = 1200
 
-Apache Konfiguration der Module in der vhosts default.conf
-* Options FollowSymlinks
-* RewriteEngine On
+>PHP Konfiguration der Module in der php.ini
+>* session_autostart = Off
+>* file_uploads = on
+>* xdebug.remote_enable = 1
+>* allow_url_include = 1
+>* memory_limit = 1024M
+>* post_max_size = 100M
+>* upload_max_filesize = 20M
+>* max_execution_time = 1200
+>
+>Apache Konfiguration der Module in der vhosts default.conf
+>* Options FollowSymlinks
+>* RewriteEngine On
+>
+>MySQL Konfiguration in mycustom.cnf
+>* character-set-server = utf8
+>* collation-server = utf8_unicode_ci
+>* skip-character-set-client-handshake
 
-MySQL Konfiguration in mycustom.cnf
-* character-set-server = utf8
-* collation-server = utf8_unicode_ci
-* skip-character-set-client-handshake
-````
-
-## Installation
+### Installation
 
 Klone dieses Repository auf deinen Lokalen Computer mit dem Terminal und nutze danach die option`docker-compose up -d` um den Container zu Starten.
 
 Im Terminal ausführen
-```shell
-git clone https://github.com/rogergerecke/xtcommerce6-docker-container.git
-cd docker-compose-lamp/
-git fetch --all
-git checkout 7.1.x
-docker-compose up -d
 
-./install_xtcommerce.sh
+```sh
+$ git clone https://github.com/rogergerecke/xtcommerce6-docker-container.git
+$ cd docker-compose-lamp/
+$ git fetch --all
+$ git checkout 7.1.x
+$ docker-compose up -d
+
+$ ./install_xtcommerce.sh
 ```
 
 Der LAMP Server ist startklar!! Du kannst im Browser erreichen unter `http://localhost`.
 
-## Ordnerstrucktur
+#### Ordnerstrucktur
 
 ```
 /bin
@@ -73,11 +73,14 @@ Der LAMP Server ist startklar!! Du kannst im Browser erreichen unter `http://loc
 ## enhält die Logdatein diese sind für uns in der Entwiklung interessant hast du Fehler oder Problem schaue hier in den Logfiles nach.
 
 /tests
-## hier kommen die PHPunit tests hin
+## hier kommen die PHPunit tests hinein
 
 /www
 ## enthält am ende der Installation das xt:Commerce Shop System dort verbringen wir wohl die meiste Zeit
 ```
-## Mit PHPStorm Programieren
+##### Mit PHPStorm Programieren
 
 Ich liebe PHPStorm als Entwiklungs-Umgebung sie ist günstig und bietet einfach alles was man braucht
+
+
+
