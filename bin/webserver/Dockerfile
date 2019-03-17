@@ -33,6 +33,7 @@ RUN apt-get -y install \
     zlib1g-dev \
     zlib1g-dev \
     libzip-dev \
+    php-soap \
     libyaml-dev
 
 RUN docker-php-ext-install \
