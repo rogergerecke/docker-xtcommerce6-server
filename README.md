@@ -1,20 +1,48 @@
-# Docker Container zur xt:Commerce entwicklung
+# xt:Commerce Entwiklung im Docker Container
 
+Wer schnell in die Entwiklung von xt:Commerce 6 einsteigen will kann das am besten in einem Docker Container tun.
+Die ist keine von xt:Commerce Supportete Version!
 
-Dies ist die Basis-Entwiklungsumgebung für xt:Commerce 6 Free es handelt sich hierbei nicht um eine offiziele Version.  Es soll interessierten Entwiklern helfen schnell los legen zu können.
+## Container mit LAMP umgebung
 
-* PHP
+* Basis Linux Debian und NGNIX als Proxy
 * Apache
-* MySQL
+* PHP 7.3
+* cURL
+* Zlib
+* GDlib
+* SOAP
+* SimpleXML
+* MySQL 5.7
 * phpMyAdmin
-* xt:Commerce Install
+* xt:Commerce Install shell Skript
 
-Basierend auf den benötigten Grundeinstellung mit PHP und Modulen
-* [7.3.x](https://github.com/rogergerecke/xtcommerce6-docker-container.git)
+### Benötigten Grundeinstellung für xt:Commerce 6 Free
+
+```
+PHP Konfiguration der Module in der php.ini
+* session_autostart = Off
+* file_uploads = on
+* xdebug.remote_enable = 1
+* allow_url_include = 1
+* memory_limit = 1024M
+* post_max_size = 100M
+* upload_max_filesize = 20M
+* max_execution_time = 1200
+
+Apache Konfiguration der Module in der vhosts default.conf
+* Options FollowSymlinks
+* RewriteEngine On
+
+MySQL Konfiguration in mycustom.cnf
+* character-set-server = utf8
+* collation-server = utf8_unicode_ci
+* skip-character-set-client-handshake
+````
 
 ## Installation
 
-Klone dieses Repository auf deinen Lokalen Computer und nutze die option`docker-compose up -d`.
+Klone dieses Repository auf deinen Lokalen Computer mit dem Terminal und nutze danach die option`docker-compose up -d` um den Container zu Starten.
 
 Im Terminal ausführen
 ```shell
@@ -38,7 +66,18 @@ Der LAMP Server ist startklar!! Du kannst im Browser erreichen unter `http://loc
 /config
 ## enthält die config Datein für PHP,MYSQL,VHOST wenn man will kann man dort z.b. andere einstellung in der php.ini vornehmen.
 
+/data
+## enthält die gemounteten Datenbank Datein hier brauchen wir eigentlich auch nichts machen
 
+/logs
+## enhält die Logdatein diese sind für uns in der Entwiklung interessant hast du Fehler oder Problem schaue hier in den Logfiles nach.
 
+/tests
+## hier kommen die PHPunit tests hin
+
+/www
+## enthält am ende der Installation das xt:Commerce Shop System dort verbringen wir wohl die meiste Zeit
 ```
-## Installation mit PHPStorm das beste zusammenspiel
+## Mit PHPStorm Programieren
+
+Ich liebe PHPStorm als Entwiklungs-Umgebung sie ist günstig und bietet einfach alles was man braucht
