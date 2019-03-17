@@ -52,7 +52,11 @@ $ git fetch --all
 $ git checkout 7.3.x
 $ docker-compose up -d
 
+# Download and Install xt:Commerce files
 $ ./install_xtcommerce.sh
+
+# Set Folder default Premission
+$ sudo ./set_folder_premission.sh
 ```
 
 Der LAMP Server ist startklar!! Du kannst im Browser erreichen unter `http://localhost`.
