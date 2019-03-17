@@ -33,7 +33,7 @@ RUN apt-get -y install \
     zlib1g-dev \
     zlib1g-dev \
     libzip-dev \
-    libyaml-dev \
+    libyaml-dev
 
 RUN docker-php-ext-install \
     pdo_mysql \
@@ -43,7 +43,7 @@ RUN docker-php-ext-install \
     tokenizer \
     json \
     soap \
-    zip \
+    zip
 
 # Install YAML extension
 RUN pecl install yaml-2.0.4 && echo "extension=yaml.so" > /usr/local/etc/php/conf.d/ext-yaml.ini
