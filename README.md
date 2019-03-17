@@ -49,7 +49,7 @@ Im Terminal ausführen
 $ https://github.com/rogergerecke/docker-xtcommerce6-server.git
 $ cd docker-xtcommerce6-server/
 $ git fetch --all
-$ git checkout 7.1.x
+$ git checkout 7.3.x
 $ docker-compose up -d
 
 $ ./install_xtcommerce.sh
