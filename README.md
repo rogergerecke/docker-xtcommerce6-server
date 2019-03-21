@@ -61,6 +61,16 @@ $ sudo ./set_folder_premission.sh
 
 Der LAMP Server ist startklar!! Du kannst im Browser erreichen unter `http://localhost`.
 
+- Shop instalation unter `http://localhost`
+- phpMyAdmin unter `http://localhost:8080`
+
+#### Datenbankverbindung
+- Datenbakhost: mysql
+- Datenbankname: xtc
+- Datenbanknutzer: xtc
+- Datenbankpassword: xtc
+
+
 #### Ordnerstrucktur
 
 ```
