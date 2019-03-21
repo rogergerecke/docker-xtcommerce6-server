@@ -2,27 +2,29 @@ version: "3"
 
 services:
   webserver:
-    build: 
+    build:
       context: ./bin/webserver
     container_name: 'xtc-webserver'
     restart: 'always'
     ports:
       - "80:80"
       - "443:443"
-    links: 
+    links:
       - mysql
-    volumes: 
+    volumes:
       - ${DOCUMENT_ROOT-./www}:/var/www/html
       - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini
       - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled
       - ${LOG_DIR-./logs/apache2}:/var/log/apache2
+    environment:
+      - _SYSTEM_DEBUG=true
   mysql:
     build: ./bin/mysql
     container_name: 'xtc-mysql'
     restart: 'always'
     ports:
       - "3306:3306"
-    volumes: 
+    volumes:
       - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql
       - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
       - ${MYSQL_CONFIG-./config/mysql/mycustom.cnf}:/etc/mysql/conf.d/custom.cnf
@@ -41,5 +43,5 @@ services:
       PMA_PORT: 3306
     ports:
       - '8080:80'
-    volumes: 
+    volumes:
       - /sessions
