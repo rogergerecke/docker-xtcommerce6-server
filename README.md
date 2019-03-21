@@ -65,7 +65,7 @@ Der LAMP Server ist startklar!! Du kannst im Browser erreichen unter `http://loc
 - phpMyAdmin unter `http://localhost:8080`
 
 #### Datenbankverbindung
-- Datenbakhost: mysql
+- Datenbankhost: mysql
 - Datenbankname: xtc
 - Datenbanknutzer: xtc
 - Datenbankpassword: xtc
@@ -90,11 +90,19 @@ Der LAMP Server ist startklar!! Du kannst im Browser erreichen unter `http://loc
 ## hier kommen die PHPunit tests hinein
 
 /www
-## enthält am ende der Installation das xt:Commerce Shop System dort verbringen wir wohl die meiste Zeit
+## enthält am ende die Installation das xt:Commerce Shop System dort verbringen wir wohl die meiste Zeit
 ```
 ##### Mit PHPStorm Programieren
 
 Ich liebe PHPStorm als Entwiklungs-Umgebung sie ist günstig und bietet einfach alles was man braucht
+
+##### Hilfe
+Bei fehlern oder für verbesserung hier ein Issues eröffnen
+
+###### Future
+
+- [x] Update to PHP 7.3
+- [ ] Add .sh for Template editing
 
 
 
