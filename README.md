@@ -88,6 +88,7 @@ Der LAMP Server ist startklar!! Du kannst im Browser erreichen unter `http://loc
 
 /sql
 ## enthält die sql demo daten für den shop
+
 /tests
 ## hier kommen die PHPunit tests hinein
 
