@@ -104,7 +104,7 @@ Bei fehlern oder für verbesserung hier ein Issues eröffnen
 
 ###### Future
 
-- [x] Update to PHP 7.3
+- [x] Update to PHP 7.3.3
 - [ ] Add .sh for Template editing
 
 
