@@ -1,4 +1,4 @@
-FROM php:7.3.2-apache
+FROM php:7.3.3-apache
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -7,6 +7,7 @@ RUN apt-get upgrade -y
 
 # Install useful tools
 RUN apt-get -y install apt-utils nano wget dialog
+
 
 # Install important libraries
 RUN apt-get -y install --fix-missing apt-utils build-essential git curl libcurl3 libcurl3-dev zip
@@ -24,6 +25,7 @@ RUN apt-get -y install libmcrypt-dev
 RUN pecl install mcrypt-1.0.2
 RUN docker-php-ext-enable mcrypt
 
+RUN rm /etc/apt/preferences.d/no-debian-php
 # Download packages
 RUN apt-get -y install \
     libsqlite3-dev \
@@ -49,7 +51,7 @@ RUN docker-php-ext-install \
 # Install YAML extension
 RUN pecl install yaml-2.0.4 && echo "extension=yaml.so" > /usr/local/etc/php/conf.d/ext-yaml.ini
 
-# unicode unterstützung
+# unicode symbols activation
 RUN apt-get -y install libicu-dev
 RUN docker-php-ext-install -j$(nproc) intl
 
@@ -60,5 +62,12 @@ RUN apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
 RUN docker-php-ext-install -j$(nproc) gd
 
-# Enable apache modules
+# todo add ssl cert creation
+
+# a2enmod: enable apache modules and start it rewrite, headers, ssl
 RUN a2enmod rewrite headers ssl
+
+# download and install xt:Commerce to system
+
+# ARG XTC_DOWNLOAD_URL="https://s3-eu-west-1.amazonaws.com/xtc6/xtCommerce_6.1.1-2019-03-27.zip"
+# RUN curl http://example.org/file.zip | tar -xf - -C path/to/save
