@@ -4,7 +4,7 @@
 #   xtcommerce datei
 #   im donload link
 
-DATEINAME="xtCommerce_6.1.1-2019-03-27"
+DATEINAME="xtCommerce_6.1.2-2019-05-27"
 
 # download xtcommerce from url
 if curl -o $DATEINAME.zip -SL https://s3-eu-west-1.amazonaws.com/xtc6/$DATEINAME.zip
