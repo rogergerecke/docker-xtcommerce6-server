@@ -1,6 +1,6 @@
 # Docker-Container für die xt:Commerce Entwicklung
 
->Wer schnell in die Entwiklung von xt:Commerce 6.2.1 Free einsteigen will kann dies in einem Docker-Container tun.  Dies ist keine von xt:Commerce Supportete Version!
+>Wer schnell in die Entwiklung von xt:Commerce 6.2.2 Free einsteigen will kann dies in einem Docker-Container tun.  Dies ist keine von xt:Commerce Supportete Version!
 
 ## Im Docker-Container enthalten
 
@@ -105,7 +105,7 @@ Bei fehlern oder für verbesserung hier ein Issues eröffnen
 ###### Future
 
 - [x] Update to PHP 7.3.3
-- [x] Update to xt:Commerce 6.2.1
+- [x] Update to xt:Commerce 6.2.2
 - [ ] Add .sh for Template editing
 
 

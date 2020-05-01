@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 
-#   set filename der
-#   xtcommerce datei
-#   im donload link
+#   Set the file name
+#   xt:commerce
+#   from the download link
 
-DATEINAME="xtCommerce_6.2.1-2019-11-26"
+DATEINAME="xtCommerce_6.2.2-2020-04-14"
 
-# download xtcommerce from url
-if curl -o $DATEINAME.zip -SL https://s3-eu-west-1.amazonaws.com/xtc6/$DATEINAME.zip
+# download xt:commerce from url
+if curl -o $DATEINAME.zip -SL https://xtc6.s3-eu-west-1.amazonaws.com/$DATEINAME.zip
 then
 echo "Der Download von $DATEINAME.zip war erfolgreich"
 fi
 
-# entpacke xtcommerce in den www ordner und lösche die zip datei
+# entpacke xt:commerce in den www ordner und lösche die zip datei
 if unzip -o $DATEINAME.zip -d www && rm $DATEINAME.zip
  then
  echo $DATEINAME.zip wurde nach www/$DATEINAME entpackt die Datein werden jetzt nach www verschoben...
