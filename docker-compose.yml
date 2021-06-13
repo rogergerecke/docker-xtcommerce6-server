@@ -12,10 +12,10 @@ services:
     links:
       - mysql
     volumes:
-      - ${DOCUMENT_ROOT-./www}:/var/www/html
-      - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini
-      - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled
-      - ${LOG_DIR-./logs/apache2}:/var/log/apache2
+      - ${DOCUMENT_ROOT-./www}:/var/www/html:cached
+      - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini:cached
+      - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled:cached
+      - ${LOG_DIR-./logs/apache2}:/var/log/apache2:cached
     environment:
       - _SYSTEM_DEBUG=true
   mysql:
@@ -25,9 +25,9 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql
-      - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
-      - ${MYSQL_CONFIG-./config/mysql/mycustom.cnf}:/etc/mysql/conf.d/custom.cnf
+      - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql:cached
+      - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql:cached
+      - ${MYSQL_CONFIG-./config/mysql/mycustom.cnf}:/etc/mysql/conf.d/custom.cnf:cached
     environment:
       MYSQL_ROOT_PASSWORD: shop
       MYSQL_DATABASE: xtc

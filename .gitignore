@@ -1,3 +1,5 @@
+# Ingnore the complet www folder remove separate folders for save dev..
+/www
 
 /.env
 /.vscode
