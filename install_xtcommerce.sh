@@ -4,7 +4,7 @@
 #   xt:commerce
 #   from the download link
 
-DATEINAME="xtCommerce_6.2.2-2020-04-14"
+DATEINAME="xtCommerce_6.3.2-2021-02-16"
 
 # download xt:commerce from url
 if curl -o $DATEINAME.zip -SL https://xtc6.s3-eu-west-1.amazonaws.com/$DATEINAME.zip
