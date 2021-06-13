@@ -1,6 +1,6 @@
 # Docker-Container für die xt:Commerce Entwicklung
 
->Wer schnell in die Entwiklung von xt:Commerce 6.2.2 Free einsteigen will kann dies in einem Docker-Container tun.  Dies ist keine von xt:Commerce Supportete Version!
+>Wer schnell in die Entwiklung von xt:Commerce 6.3.2 Demo einsteigen will kann dies in einem Docker-Container tun.  Dies ist keine von xt:Commerce Supportete Version!
 
 ## Im Docker-Container enthalten
 
