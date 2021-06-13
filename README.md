@@ -2,7 +2,11 @@
 
 >Wer schnell in die Entwicklung von xt:Commerce 6.3.2 Demo einsteigen will, kann dies in einem Docker-Container tun.  Dies ist keine von xt:Commerce Supportete Version!
 
-## Im Docker-Container enthalten
+>Diese docker-container version ist !!! nicht offiziell !!! von xt:Commerce sondern von mir und für Leute gedacht die schnell in die Entwicklung einsteigen wollen und spaß an Informatik haben.
+
+## Der Docker-Container
+
+>Der Docker Container ist schon konfiguriert und besteht aus folgenden Komponenten:
 
 * Basis Linux Debian
 * Apache
@@ -17,8 +21,9 @@
 * NGINX als Proxy
 * xt:Commerce Install shell Skript
 
-### Benötigten Grundeinstellung für xt:Commerce 6 Demo
+### Benötigten Grundeinstellung für die xt:Commerce 6 Demo
 
+>Diese optionen sind bereits gesetzt und können im Ordner /config geändert werden.
 
 >PHP Konfiguration der Module in der php.ini
 >* session_autostart = Off
@@ -41,7 +46,7 @@
 
 ### Installation
 
-Klone dieses Repository auf deinen Lokalen Computer mit dem Terminal und nutze danach die option`docker-compose up -d` um den Container zu Starten.
+Klone dieses Repository auf deinen Lokalen Computer mit dem Terminal und nutze danach die option`docker-compose up -d` um den Docker Container zu starten.
 
 Im Terminal ausführen
 
@@ -49,7 +54,7 @@ Im Terminal ausführen
 $ https://github.com/rogergerecke/docker-xtcommerce6-server.git
 $ cd docker-xtcommerce6-server/
 $ git fetch --all
-$ git checkout 7.3.x
+$ git checkout 7.4.1
 $ docker-compose up -d
 
 # Download and Install xt:Commerce files
