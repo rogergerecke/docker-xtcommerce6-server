@@ -1,12 +1,12 @@
 # Docker-Container für die xt:Commerce Entwicklung
 
->Wer schnell in die Entwiklung von xt:Commerce 6 Free einsteigen will kann dies in einem Docker-Container tun.  Die ist keine von xt:Commerce Supportete Version!
+>Wer schnell in die Entwicklung von xt:Commerce 6.3.2 Demo einsteigen will, kann dies in einem Docker-Container tun.  Dies ist keine von xt:Commerce Supportete Version!
 
 ## Im Docker-Container enthalten
 
 * Basis Linux Debian
 * Apache
-* PHP 7.3
+* PHP 7.4.18
 * cURL
 * Zlib
 * GDlib
@@ -17,7 +17,7 @@
 * NGINX als Proxy
 * xt:Commerce Install shell Skript
 
-### Benötigten Grundeinstellung für xt:Commerce 6 Free
+### Benötigten Grundeinstellung für xt:Commerce 6 Demo
 
 
 >PHP Konfiguration der Module in der php.ini
@@ -55,14 +55,14 @@ $ docker-compose up -d
 # Download and Install xt:Commerce files
 $ ./install_xtcommerce.sh
 
-# Set Folder default Premission
+# Set Folder default Permission
 $ sudo ./set_folder_premission.sh
 ```
 
-Der LAMP Server ist startklar!! Du kannst im Browser erreichen unter `http://localhost`.
+Der LAMP Server ist startklar! Du kannst im Browser erreichen unter `http://localhost`.
 
-- Shop instalation unter `http://localhost`
-- phpMyAdmin unter `http://localhost:8080`
+- Shop installation unter [http://localhost](http://localhost) erreichbar
+- phpMyAdmin unter [http://localhost:8080](http://localhost:8080) erreichbar
 
 #### Datenbankverbindung
 - Datenbankhost: mysql
@@ -71,7 +71,7 @@ Der LAMP Server ist startklar!! Du kannst im Browser erreichen unter `http://loc
 - Datenbankpassword: xtc
 
 
-#### Ordnerstrucktur
+#### Ordnerstruktur
 
 ```
 /bin
@@ -100,11 +100,24 @@ Der LAMP Server ist startklar!! Du kannst im Browser erreichen unter `http://loc
 Ich liebe PHPStorm als Entwiklungs-Umgebung sie ist günstig und bietet einfach alles was man braucht
 
 ##### Hilfe
-Bei fehlern oder für verbesserung hier ein Issues eröffnen
+Bei fehlern oder für verbesserung hier ein [Issue](https://github.com/rogergerecke/docker-xtcommerce6-server/issues) eröffnen
+
+Docker Help
+---
+
+
+Update the php version in an existing docker-container change the PHP version in the Dockerfile
+and run the both commands.
+
+````
+ docker-compose build --no-cache --pull YOUR_CONTAINER_NAME
+ docker-compose up -d
+````
 
 ###### Future
 
-- [x] Update to PHP 7.3
+- [x] Update to PHP 7.4.18
+- [x] Update to xt:Commerce 6.3.2
 - [ ] Add .sh for Template editing
 
 
