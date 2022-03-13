@@ -1,6 +1,6 @@
 # Docker-Container für die xt:Commerce Entwicklung
 
->Wer schnell in die Entwicklung von xt:Commerce 6.3.2 Demo einsteigen will, kann dies in einem Docker-Container tun.  Dies ist keine von xt:Commerce Supportete Version!
+>Wer schnell in die Entwicklung von xt:Commerce 6.4.1 Demo einsteigen will, kann dies in einem Docker-Container tun.  Dies ist keine von xt:Commerce Supportete Version!
 
 ## Im Docker-Container enthalten
 
@@ -117,7 +117,7 @@ and run the both commands.
 ###### Future
 
 - [x] Update to PHP 7.4.18
-- [x] Update to xt:Commerce 6.3.2
+- [x] Update to xt:Commerce 6.4.1
 - [ ] Add .sh for Template editing
 
 
