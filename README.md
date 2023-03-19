@@ -1,4 +1,5 @@
 # Docker-Container für die xt:Commerce Entwicklung
+>Ein Packet für die xt Entwicklung passend für Hetzner
 
 >Wer schnell in die Entwicklung von xt:Commerce 6.5 einsteigen will, kann dies in einem Docker-Container tun.  Dies ist keine von xt:Commerce Supportete Version!
 >Da sich die Lizensbedingungen geändert haben brauch man natürlich ein Lizensfile im Ordner /lic
@@ -19,6 +20,7 @@
 * xt:Commerce Install shell Skript
 
 ### Benötigten Grundeinstellung für xt:Commerce 6 Demo
+>Schon eingestellt in den Konfiguration
 
 
 >PHP Konfiguration der Module in der php.ini
