@@ -42,7 +42,8 @@ RUN apt-get -y install \
 # Install packages
 RUN docker-php-ext-install \
     pdo_mysql \
-    soap
+    soap \
+    mysqli
 
 
 # Install YAML extension useful by Symfony and need by composer inside docker
