@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y \
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # PECL Xdebug Extention Install https://pecl.php.net/
-RUN pecl install xdebug-2.9.2
+RUN pecl install xdebug-3.2.0
 RUN docker-php-ext-enable xdebug
 
 # Fix Debian: has no installation candidate
