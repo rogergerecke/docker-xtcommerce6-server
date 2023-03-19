@@ -50,7 +50,7 @@ Im Terminal ausführen
 $ https://github.com/rogergerecke/docker-xtcommerce6-server.git
 $ cd docker-xtcommerce6-server/
 $ git fetch --all
-$ git checkout 7.3.x
+$ git checkout 8.1.17
 $ docker-compose up -d
 
 # Download and Install xt:Commerce files
