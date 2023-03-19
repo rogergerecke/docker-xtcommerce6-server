@@ -40,14 +40,11 @@ RUN apt-get -y install \
 # Install packages
 RUN docker-php-ext-install \
     pdo_mysql \
-    tokenizer \
-    json \
-    soap \
-    zip
+    soap
 
 
 # Install YAML extension useful by Symfony and need by composer inside docker
-RUN pecl install install yaml
+RUN  pecl install yaml && echo "extension=yaml.so" > /usr/local/etc/php/conf.d/ext-yaml.ini && docker-php-ext-enable yaml
 
 # unicode symbols activation
 RUN apt-get -y install libicu-dev
