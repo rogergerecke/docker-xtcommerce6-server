@@ -1,6 +1,8 @@
 # Useful for Hetzner Dev
 FROM php:8.1.17-apache-buster
 
+ENV PHP_VERSION=8.1
+
 # Fix Debian with noninteractive we run a automatic install and no Interactive
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -50,6 +52,9 @@ RUN  pecl install yaml && echo "extension=yaml.so" > /usr/local/etc/php/conf.d/e
 RUN apt-get -y install libicu-dev
 RUN docker-php-ext-install -j$(nproc) intl
 
+# Insatall ioncube loader
+# Install the ioncube loader - set the PHP_VERSION to what you need
+RUN mkdir -p /usr/local/lib && curl -sSlL  -o /tmp/ioncube.tar.gz https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz && tar -x --strip-components=1 -C /usr/local/lib -f /tmp/ioncube.tar.gz ioncube/ioncube_loader_lin_${PHP_VERSION}.so
 
 # a2enmod: enable apache modules and start it rewrite, headers, ssl
 RUN a2enmod rewrite headers
