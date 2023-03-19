@@ -1,6 +1,7 @@
 # Docker-Container für die xt:Commerce Entwicklung
 
->Wer schnell in die Entwicklung von xt:Commerce 6.4.1 Demo einsteigen will, kann dies in einem Docker-Container tun.  Dies ist keine von xt:Commerce Supportete Version!
+>Wer schnell in die Entwicklung von xt:Commerce 6.5 einsteigen will, kann dies in einem Docker-Container tun.  Dies ist keine von xt:Commerce Supportete Version!
+>Da sich die Lizensbedingungen geändert haben brauch man natürlich ein Lizensfile im Ordner /lic
 
 ## Im Docker-Container enthalten
 
