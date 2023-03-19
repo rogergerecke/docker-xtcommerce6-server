@@ -7,7 +7,7 @@
 
 * Basis Linux Debian
 * Apache
-* PHP 7.4.18
+* PHP 8.1.17
 * cURL
 * Zlib
 * GDlib
@@ -117,8 +117,8 @@ and run the both commands.
 
 ###### Future
 
-- [x] Update to PHP 7.4.18
-- [x] Update to xt:Commerce 6.4.1
+- [x] Update to PHP 8.1.17
+- [x] Update to xt:Commerce 6.5.3
 - [ ] Add .sh for Template editing
 
 
