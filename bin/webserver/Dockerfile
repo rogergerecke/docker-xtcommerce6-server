@@ -1,5 +1,5 @@
 # Useful for Hetzner Dev
-FROM php:7.4.18-apache-buster
+FROM php:8.1.17-apache-buster
 
 # Fix Debian with noninteractive we run a automatic install and no Interactive
 ARG DEBIAN_FRONTEND=noninteractive
